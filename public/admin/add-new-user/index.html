@@ -16,7 +16,7 @@
             <a class="text-lg sm:text-xl text-white" href="/admin/admin-users">Back To Dashboard</a>
             <h1 class="text-center text-3xl sm:text-5xl text-white pt-5 pb-3 mb-10">Add New User</h1>
             <form class="add-user-form">
-                <div class="box-parent grid gap-4 sm:grid-cols-2 mb-5">
+                <div class="box-parent grid gap-4 sm:grid-cols-3 mb-5">
                     <div class="box">
                         <input class="p-2 w-full rounded" type="text" id="fullname" placeholder="Full name">
                         <span id="error_fullname"></span>
@@ -28,6 +28,14 @@
                     <div class="box">
                         <input class="p-2 w-full rounded" type="email" id="email" placeholder="Email">
                         <span id="error_email"></span>
+                    </div>
+                    <div class="box max-w-sm mx-auto">
+                            <select id="gender"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option selected>Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
                     </div>
                     <div class="box">
                         <input class="p-2 w-full rounded" type="date" id="date_of_birth">

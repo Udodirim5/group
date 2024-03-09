@@ -1,6 +1,7 @@
 let fullName;
 let username;
 let email;
+let gender;
 let dateOfBirth;
 let password;
 let country;
@@ -19,7 +20,7 @@ selectedImgInput.addEventListener('change', () => {
     imgPreview.style.display = 'block';
 });
 
-submitBtn.addEventListener("click", (e) => {
+submitBtn.addEventListener("click", async (e) => {
     e.preventDefault();
 
     // Retrieve input values
@@ -56,6 +57,9 @@ submitBtn.addEventListener("click", (e) => {
     }
     if (email.trim() === "") {
         errors.push("Please enter your Email.");
+    }
+    if (gender == "") {
+        errors.push("Please select your gender.");
     }
     if (dateOfBirth.trim() === "") {
         errors.push("Please enter your date of birth.");
@@ -94,6 +98,7 @@ submitBtn.addEventListener("click", (e) => {
             fullName,
             username,
             email,
+            gender,
             dateOfBirth,
             password,
             country,
@@ -110,4 +115,35 @@ submitBtn.addEventListener("click", (e) => {
     if (fullName === "" || username === "" || email === "" || dateOfBirth === "" || password === "" || country === "" || stateProvince === "" || city === "" || phoneNumber === "" || whatsapp === "") {
         submitBtn.disabled = true;
     }
-});
+
+
+
+
+
+        if (isFormLocked) {
+            return null;
+        }
+
+        isFormLocked = true
+
+
+        // if (cloudinaryReturnedObject) {
+        //     pet.public_id = cloudinaryReturnedObject.public_id;
+        //     pet.version = cloudinaryReturnedObject.version;
+        //     pet.signature = cloudinaryReturnedObject.signature;
+        // }
+
+        // document.querySelector(`#add-new-pet-form`).classList.add("form-loading");
+
+        const ourPromise = await fetch("/.netlify/functions/addPet", {
+            method: "POST",
+            body: JSON.stringify(inputData),
+            headers: { "Content-Type": "application/json" },
+        });
+
+        const theRespnose = await ourPromise.json();
+
+        if (theRespnose.success) {
+            window.location = "/admin/admin-users";
+        }
+    });
