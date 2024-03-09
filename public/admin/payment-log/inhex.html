@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
 
-    <nav class="fixed top-0 z-50 w-full darkground border-b border-blue-200 dark:bg-blue-800 dark:border-blue-700">
+    <nav class="fixed top-0 z-50 w-full darkground  border-b border-blue-200 dark:bg-blue-800 dark:border-blue-700">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
                 <div class="flex items-center justify-start rtl:justify-end">
                     <button data-drawer-target="sidesidebar" data-drawer-toggle="logo-sidebar"
                         aria-controls="logo-sidebar" type="button"
-                        class="inline-flex items-center p-2 text-sm text-white  rounded-lg sm:hidden hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-200sid-hov dark:focus:ring-blue-600">
+                        class="inline-flex items-center p-2 text-sm   rounded-lg sm:hidden  focus:outline-none focus:ringsid-hov-2 focus:ring-blue-200 dark: dark:focus:ring-blue-600">
                         <span class="sr-only">Open sidebar</span>
                         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +28,7 @@
                         </svg>
                     </button>
                     <a href="#" class="flex ms-2 md:me-24">
-                        <img src="./img/IMG_20231217_113117.jpg" class="h-8 me-3 rounded-full overflow-hidden"
+                        <img src="/img/IMG_20231217_113117.jpg" class="h-8 me-3 rounded-full overflow-hidden"
                             alt="FlowBite Logo" />
                         <span
                             class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Logo</span>
@@ -41,7 +41,7 @@
                                 class="flex text-sm bg-blue-800 rounded-full focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-600"
                                 aria-expanded="false" data-dropdown-toggle="dropdown-user">
                                 <span class="sr-only">Open user menu</span>
-                                <img class="w-8 h-8 rounded-full" src="img/IMG_20231217_113117.jpg" alt="user photo">
+                                <img class="w-8 h-8 rounded-full" src="/img/IMG_20231217_113117.jpg" alt="user photo">
                             </button>
                         </div>
                         <div class="z-50 hidden absolute top-5 right-7 my-4 text-base list-none darkground divide-y divide-blue-100 rounded shadow dark:bg-blue-700 dark:divide-blue-600"
@@ -56,23 +56,19 @@
                             </div>
                             <ul class="py-1" role="none">
                                 <li>
-                                    <a href="#"
-                                        class="block px-4 py-2 my-1 text-sm text-white sid-hov"
+                                    <a href="/admin/dashboard" class="block px-4 py-2 my-1 text-sm text-white sid-hov"
                                         role="menuitem">Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="#"
-                                        class="block px-4 py-2 my-1 text-sm text-white sid-hov"
+                                    <a href="#" class="block px-4 py-2 my-1 text-sm text-white sid-hov"
                                         role="menuitem">Settings</a>
                                 </li>
                                 <li>
-                                    <a href="#"
-                                        class="block px-4 py-2 my-1 text-sm text-white sid-hov"
+                                    <a href="#" class="block px-4 py-2 my-1 text-sm text-white sid-hov"
                                         role="menuitem">Earnings</a>
                                 </li>
                                 <li>
-                                    <a href="#"
-                                        class="block px-4 py-2 my-1 text-sm text-white sid-hov"
+                                    <a href="#" class="block px-4 py-2 my-1 text-sm text-white sid-hov"
                                         role="menuitem">Sign out</a>
                                 </li>
                             </ul>
@@ -84,14 +80,13 @@
     </nav>
 
     <aside id="logo-sidebar"
-        class="fixed hidden sm:block top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full darkground border-r border-blue-200 sm:translate-x-0 dark:bg-blue-800 dark:border-blue-700"
+        class="fixed hidden sm:block top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full darkground  border-r border-blue-200 sm:translate-x-0 dark:bg-blue-800 dark:border-blue-700"
         aria-label="Sidebar">
-        <div class="h-full px-3 pb-4 overflow-y-auto darkground dark:bg-blue-800">
+        <div class="h-full px-3 pb-4 overflow-y-auto darkground  dark:bg-blue-800">
             <ul class="space-y-2 font-medium">
                 <li>
-                    <a href="#"
-                        class="flex items-center p-2 text-white  rounded-lg dark:text-white sid-hov group">
-                        <svg class="mr-5 w-5 h-5 text-white  transition duration-75 dark:text-white  group-hover:text-white  dark:group-hover:text-white"
+                    <a href="/admin/dashboard" class="flex items-center p-2 sid-hov  rounded-lg dark:text-white group">
+                        <svg class="mr-5 w-5 h-5   transition duration-75 dark:  group-hover:  dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 22 21">
                             <path
@@ -103,9 +98,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./event.html"
-                        class="flex items-center p-2 text-white  rounded-lg dark:text-white sid-hov group">
-                        <svg class="mr-5 flex-shrink-0 w-5 h-5 text-white  transition duration-75 dark:text-white  group-hover:text-white  dark:group-hover:text-white"
+                    <a href="/admin/all-events" class="flex items-center p-2 sid-hov  rounded-lg dark:text-white group">
+                        <svg class="mr-5 flex-shrink-0 w-5 h-5   transition duration-75 dark:  group-hover:  dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 18 18">
                             <path
@@ -115,7 +109,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center p-2 sid-hov  rounded-lg dark:text-white group">
+                    <a href="/admin/inbox" class="flex items-center p-2 sid-hov  rounded-lg dark:text-white group">
                         <svg class="mr-5 flex-shrink-0 w-5 h-5   transition duration-75 dark:  group-hover:  dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 20 20">
@@ -128,9 +122,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./user.html"
-                        class="flex items-center p-2 text-white  rounded-lg dark:text-white sid-hov group">
-                        <svg class="mr-5 flex-shrink-0 w-5 h-5 text-white  transition duration-75 dark:text-white  group-hover:text-white  dark:group-hover:text-white"
+                    <a href="/admin/admin-users"
+                        class="flex items-center p-2 sid-hov  rounded-lg dark:text-white group">
+                        <svg class="mr-5 flex-shrink-0 w-5 h-5   transition duration-75 dark:  group-hover:  dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 20 18">
                             <path
@@ -140,9 +134,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./payment-log.html"
-                        class="flex items-center p-2 text-white  rounded-lg dark:text-white sid-hov group">
-                        <svg class="mr-5 flex-shrink-0 w-5 h-5 text-white  transition duration-75 dark:text-white  group-hover:text-white  dark:group-hover:text-white"
+                    <a href="/admin/payment-log"
+                        class="flex items-center p-2 sid-hov  rounded-lg dark:text-white group">
+                        <svg class="mr-5 flex-shrink-0 w-5 h-5   transition duration-75 dark:  group-hover:  dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 18 20">
                             <path
@@ -152,9 +146,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#"
-                        class="flex items-center p-2 text-white  rounded-lg dark:text-white sid-hov group">
-                        <svg class="mr-5 flex-shrink-0 w-5 h-5 text-white  transition duration-75 dark:text-white  group-hover:text-white  dark:group-hover:text-white"
+                    <a href="#" class="flex items-center p-2 sid-hov  rounded-lg dark:text-white group">
+                        <svg class="mr-5 flex-shrink-0 w-5 h-5   transition duration-75 dark:  group-hover:  dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3" />
@@ -163,9 +156,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#"
-                        class="flex items-center p-2 text-white  rounded-lg dark:text-white sid-hov group">
-                        <svg class="mr-5 flex-shrink-0 w-5 h-5 text-white  transition duration-75 dark:text-white  group-hover:text-white  dark:group-hover:text-white"
+                    <a href="#" class="flex items-center p-2 sid-hov  rounded-lg dark:text-white group">
+                        <svg class="mr-5 flex-shrink-0 w-5 h-5   transition duration-75 dark:  group-hover:  dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 20 20">
                             <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.96 2.96 0 0 0 .13 5H5Z" />
@@ -482,7 +474,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="/js/main.js"></script>
 
 
 </body>
