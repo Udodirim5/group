@@ -11,10 +11,10 @@ logInBtn.addEventListener('click', (e) => {
     const userName = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
 
-    if (userName === "" || password === "") {
-        alert("Please enter both username and password!");
-    } else if (userName === adminCredentials.username && password === adminCredentials.password) {
+    if (userName === adminCredentials.username && password === adminCredentials.password) {
         window.location.href = "/admin/dashboard";
+    } else if (userName === "" || password === "") {
+        alert("Please enter both username and password!");
     } else {
         alert("Invalid username or password. Please try again.");
     }
