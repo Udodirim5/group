@@ -41,7 +41,7 @@ submitBtn.addEventListener("click", async (e) => {
 
         // document.querySelector(`#add-new-pet-form`).classList.add("form-loading");
 
-        const ourPromise = await fetch("/.netlify/functions/addNewUser", {
+        const ourPromise = await fetch("/.netlify/functions/createNewUser", {
             method: "POST",
             body: JSON.stringify(inputData),
             headers: { "Content-Type": "application/json" },
