@@ -11,8 +11,11 @@ async function addNewUsers() {
         clone.querySelector('#users-email').textContent = "Email: " + user.email;
         clone.querySelector('#users-phone').textContent = "Phone: " + user.phone;
         clone.querySelector('#users-whatsapp').textContent = "Whatsapp: " + user.whatsapp;
-        clone.querySelector('.img-side img').src = user.photo;
-        clone.querySelector('.img-side img').alt = `profile photo of ${user.name}`; 
+
+        if (!user.photo) user.photo = "/img/fallback.jpg"
+
+            clone.querySelector('.img-side img').src = user.photo;
+        clone.querySelector('.img-side img').alt = `profile photo of ${user.name}`;
         wrapper.appendChild(clone);
     })
 
