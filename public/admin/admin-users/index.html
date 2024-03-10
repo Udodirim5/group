@@ -142,7 +142,8 @@
                     </a>
                 </li>
                 <li>
-                    <button id="logout" class="flex items-center p-2 sid-hov w-full text-left rounded-lg dark:text-white group">
+                    <button id="logout"
+                        class="flex items-center p-2 sid-hov w-full text-left rounded-lg dark:text-white group">
                         <svg class="mr-5 flex-shrink-0 w-5 h-5   transition duration-75 dark:  group-hover:  dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -169,14 +170,15 @@
                     <p class="text-center mt-5">Add New User</p>
                 </div>
             </a>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-14">
 
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-14 added-user-list"></div>
+            <template id="new-user-card">
                 <div class="one">
                     <div class="info-side">
-                        <h2><strong>Name:</strong> John Doe</h2>
-                        <h2><strong>Email:</strong> Exanple@email.com</h2>
-                        <h2><strong>Phone:</strong> +912345678</h2>
-                        <h2><strong>WhatsApp:</strong> +912345678</h2>
+                        <h2 id="users-name"></h2>
+                        <h2 id="users-email"></h2>
+                        <h2 id="users-phone"></h2>
+                        <h2 id="users-whatsapp"></h2>
                         <div class="btns">
                             <a class="my-btn" href="#">Edit</a>
                             <button class="my-btn">Delete</button>
@@ -186,88 +188,7 @@
                         <img src="/img/IMG_20231217_113117.jpg" alt="Pet" class="">
                     </div>
                 </div>
-
-                <div class="one">
-                    <div class="info-side">
-                        <h2><strong>Name:</strong> John Doe</h2>
-                        <h2><strong>Email:</strong> Exanple@email.com</h2>
-                        <h2><strong>Phone:</strong> +912345678</h2>
-                        <h2><strong>WhatsApp:</strong> +912345678</h2>
-                        <div class="btns">
-                            <a class="my-btn" href="#">Edit</a>
-                            <button class="my-btn">Delete</button>
-                        </div>
-                    </div>
-                    <div class="img-side">
-                        <img src="/img/IMG_20231217_113117.jpg" alt="Pet" class="">
-                    </div>
-                </div>
-
-                <div class="one">
-                    <div class="info-side">
-                        <h2><strong>Name:</strong> John Doe</h2>
-                        <h2><strong>Email:</strong> Exanple@email.com</h2>
-                        <h2><strong>Phone:</strong> +912345678</h2>
-                        <h2><strong>WhatsApp:</strong> +912345678</h2>
-                        <div class="btns">
-                            <a class="my-btn" href="#">Edit</a>
-                            <button class="my-btn">Delete</button>
-                        </div>
-                    </div>
-                    <div class="img-side">
-                        <img src="/img/IMG_20231217_113117.jpg" alt="Pet" class="">
-                    </div>
-                </div>
-
-                <div class="one">
-                    <div class="info-side">
-                        <h2><strong>Name:</strong> John Doe</h2>
-                        <h2><strong>Email:</strong> Exanple@email.com</h2>
-                        <h2><strong>Phone:</strong> +912345678</h2>
-                        <h2><strong>WhatsApp:</strong> +912345678</h2>
-                        <div class="btns">
-                            <a class="my-btn" href="#">Edit</a>
-                            <button class="my-btn">Delete</button>
-                        </div>
-                    </div>
-                    <div class="img-side">
-                        <img src="/img/IMG_20231217_113117.jpg" alt="Pet" class="">
-                    </div>
-                </div>
-
-                <div class="one">
-                    <div class="info-side">
-                        <h2><strong>Name:</strong> John Doe</h2>
-                        <h2><strong>Email:</strong> Exanple@email.com</h2>
-                        <h2><strong>Phone:</strong> +912345678</h2>
-                        <h2><strong>WhatsApp:</strong> +912345678</h2>
-                        <div class="btns">
-                            <a class="my-btn" href="#">Edit</a>
-                            <button class="my-btn">Delete</button>
-                        </div>
-                    </div>
-                    <div class="img-side">
-                        <img src="/img/IMG_20231217_113117.jpg" alt="Pet" class="">
-                    </div>
-                </div>
-
-                <div class="one">
-                    <div class="info-side">
-                        <h2><strong>Name:</strong> John Doe</h2>
-                        <h2><strong>Email:</strong> Exanple@email.com</h2>
-                        <h2><strong>Phone:</strong> +912345678</h2>
-                        <h2><strong>WhatsApp:</strong> +912345678</h2>
-                        <div class="btns">
-                            <a class="my-btn" href="#">Edit</a>
-                            <button class="my-btn">Delete</button>
-                        </div>
-                    </div>
-                    <div class="img-side">
-                        <img src="/img/IMG_20231217_113117.jpg" alt="Pet" class="">
-                    </div>
-                </div>
-
-            </div>
+            </template>
 
         </div>
     </div>
@@ -275,6 +196,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/dynamicData.js"></script>
     <script src="/js/logout.js"></script>
 
 
