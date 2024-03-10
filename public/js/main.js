@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     dropdownToggle.addEventListener('click', function () {
         dropdownMenu.classList.toggle('hidden'); // Assuming 'hidden' class will hide the dropdown
     });
+    
 
     // Close dropdown when clicking outside of it
     document.addEventListener('click', function (event) {
