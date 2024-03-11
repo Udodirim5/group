@@ -91,7 +91,7 @@ h6 {
 }
 
 .view-btn {
-    padding: 0;
+    padding: 0 10px;
 }
 
 .info-side h2 {
@@ -424,9 +424,10 @@ table th {
 }
 
 .card {
-    width: 17em;
-    height: 22.5em;
-    background: #171717;
+    padding: 15px;
+    width: 25em;
+    height: 30.5em;
+    background: var(--background-color);
     transition: 1s ease-in-out;
     clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
     border-top-right-radius: 20px;
@@ -480,7 +481,13 @@ table th {
 }
 
 
+.view-overlay-inner p {
+    display: block;
+}
 
+.view-overlay-inner p span {
+    display: inline;
+}
 
 
 
@@ -523,6 +530,11 @@ table th {
         margin-top: 110px;
         padding-top: 0;
     }
+
+    .view-btn {
+        padding: 0;
+    }
+
 
 
 }

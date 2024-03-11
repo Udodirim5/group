@@ -20,6 +20,15 @@ async function addNewUsers() {
             clone.querySelector('.img-view img').src = user.photo;
             clone.querySelector('.img-view img').alt = `profile photo of ${user.name}`;
 
+            clone.querySelector('#view-users-name').textContent = user.fullName;
+            clone.querySelector('#view-users-email').textContent = user.email;
+            clone.querySelector('#view-users-gender').textContent = user.gender;
+            clone.querySelector('#view-users-uname').textContent = user.username;
+            clone.querySelector('#view-users-country').textContent = user.country;
+            clone.querySelector('#view-users-state').textContent = user.stateProvince;
+            clone.querySelector('#view-users-city').textContent = user.city;
+            clone.querySelector('#view-users-phone').textContent = user.phoneNumber;
+            clone.querySelector('#view-users-whatsapp').textContent = user.whatsapp;
             // Append the clone to the wrapper
             wrapper.appendChild(clone);
         });
