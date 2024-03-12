@@ -8,7 +8,7 @@ async function addNewUsers() {
 
         userData.forEach((user) => {
             const clone = template.content.cloneNode(true);
-            clone.querySelector('#users-name').textContent = "Name: " + user.name;
+            clone.querySelector('#users-name').textContent = "Name: " + user.fullName;
             clone.querySelector('#users-email').textContent = "Email: " + user.email;
             clone.querySelector('#users-phone').textContent = "Phone: " + user.phoneNumber;
             clone.querySelector('#users-whatsapp').textContent = "Whatsapp: " + user.whatsapp;
@@ -29,6 +29,7 @@ async function addNewUsers() {
             clone.querySelector('#view-users-city').textContent = user.city;
             clone.querySelector('#view-users-phone').textContent = user.phoneNumber;
             clone.querySelector('#view-users-whatsapp').textContent = user.whatsapp;
+
             // Append the clone to the wrapper
             wrapper.appendChild(clone);
         });
@@ -36,25 +37,29 @@ async function addNewUsers() {
         // Append the wrapper to the DOM
         document.querySelector(".added-user-list").appendChild(wrapper);
 
-        // Re-bind event listeners after elements are added
+        // Bind event listeners for each cloned item
         bindEventListeners();
     } catch (error) {
         console.error("Error fetching user data:", error);
     }
 }
 
-// Function to bind event listeners
+// Function to bind event listeners for each cloned item
 function bindEventListeners() {
-    const closeBtn = document.querySelector("#closeBtn");
-    const openOverlay = document.querySelector("#open-overlay");
-    const viewOverlay = document.querySelector(".view-overlay");
+    const openOverlayButtons = document.querySelectorAll("#open-overlay");
+    const closeButtons = document.querySelectorAll("#closeBtn");
 
-    openOverlay.addEventListener("click", () => {
-        viewOverlay.classList.add("is-visible");
-    });
+    openOverlayButtons.forEach((openOverlayButton, index) => {
+        const closeBtn = closeButtons[index];
+        const viewOverlay = document.querySelectorAll(".view-overlay")[index];
 
-    closeBtn.addEventListener('click', () => {
-        viewOverlay.classList.remove("is-visible");
+        openOverlayButton.addEventListener("click", () => {
+            viewOverlay.classList.add("is-visible");
+        });
+
+        closeBtn.addEventListener('click', () => {
+            viewOverlay.classList.remove("is-visible");
+        });
     });
 }
 
