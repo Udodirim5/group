@@ -4,7 +4,7 @@ const handler = async (event) => {
     const client = new MongoClient(process.env.CONNECTIONSTRING)
     await client.connect()
 
-    const users = await client.db().collection('adminUsers').find().toArray();
+    const users = await client.db().collection('users').find().toArray();
     client.close();
 
 
