@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const dateOfBirth = document.getElementById("date_of_birth").value;
         const password = document.getElementById("password").value;
         const country = document.getElementById("country").value;
-        const state = document.getElementById("state").value;
+        const stateProvince = document.getElementById("state").value;
         const city = document.getElementById("city").value;
         const phone = document.getElementById("phone").value;
         const whatsapp = document.getElementById("whatsapp").value;
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
             dateOfBirth,
             password,
             country,
-            state,
+            stateProvince,
             city,
             phone,
             whatsapp,

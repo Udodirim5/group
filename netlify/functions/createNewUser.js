@@ -1,8 +1,3 @@
-// const cloudinary = require("cloudinary").v2;
-// const sanitizeHtml = require("sanitize-html");
-// const getDBClient = require("../../our-library/getDBClient");
-// // const isAdmin = require("../../our-library/idAdmin");
-
 // const cloudinaryConfig = cloudinary.config({
 //     cloud_name: "dse1pm8ep",
 //     api_key: "895939763579678",
@@ -122,74 +117,66 @@
 
 // module.exports = { handler };
 
-
-
-
-
-
-
-
-
-
-
-
-const { MongoClient } = require('mongodb');
-const sanitizeHtml = require('sanitize-html');
+const cloudinary = require("cloudinary").v2;
+const getDBClient = require("../../our-library/getDBClient");
+// const isAdmin = require("../../our-library/idAdmin");
+const { MongoClient } = require("mongodb");
+const sanitizeHtml = require("sanitize-html");
 
 async function cleanUp(body) {
     const inputData = {};
 
-    inputData.fullName = sanitizeHtml(body.fullName || '', {
+    inputData.fullname = sanitizeHtml(body.fullname || "", {
         allowedTags: [],
         allowedAttributes: {},
     });
 
-    inputData.username = sanitizeHtml(body.username || '', {
+    inputData.username = sanitizeHtml(body.username || "", {
         allowedTags: [],
         allowedAttributes: {},
     });
 
-    inputData.email = sanitizeHtml(body.email || '', {
+    inputData.email = sanitizeHtml(body.email || "", {
         allowedTags: [],
         allowedAttributes: {},
     });
 
-    inputData.gender = sanitizeHtml(body.gender || '', {
+    inputData.gender = sanitizeHtml(body.gender || "", {
         allowedTags: [],
         allowedAttributes: {},
     });
 
-    inputData.dateOfBirth = sanitizeHtml(body.dateOfBirth || '', {
+    inputData.dateOfBirth = sanitizeHtml(body.dateOfBirth || "", {
         allowedTags: [],
         allowedAttributes: {},
     });
 
-    inputData.password = sanitizeHtml(body.password || '', {
+    inputData.password = sanitizeHtml(body.password || "", {
         allowedTags: [],
         allowedAttributes: {},
     });
 
-    inputData.country = sanitizeHtml(body.country || '', {
+    inputData.country = sanitizeHtml(body.country || "", {
         allowedTags: [],
         allowedAttributes: {},
     });
 
-    inputData.stateProvince = sanitizeHtml(body.stateProvince || '', {
+    inputData.stateProvince = sanitizeHtml(body.stateProvince || "", {
         allowedTags: [],
         allowedAttributes: {},
     });
 
-    inputData.city = sanitizeHtml(body.city || '', {
+    inputData.city = sanitizeHtml(body.city || "", {
         allowedTags: [],
         allowedAttributes: {},
     });
 
-    inputData.phoneNumber = sanitizeHtml(body.phoneNumber || '', {
+    inputData.phone = sanitizeHtml(body.phone || "", {
         allowedTags: [],
         allowedAttributes: {},
     });
 
-    inputData.whatsapp = sanitizeHtml(body.whatsapp || '', {
+    inputData.whatsapp = sanitizeHtml(body.whatsapp || "", {
         allowedTags: [],
         allowedAttributes: {},
     });
@@ -198,8 +185,8 @@ async function cleanUp(body) {
         inputData.birthYear = body.dateOfBirth;
     }
 
-    if (body.gender !== 'male' && body.gender !== 'female') {
-        inputData.gender = 'male';
+    if (body.gender !== "male" && body.gender !== "female") {
+        inputData.gender = "male";
     }
 
     return inputData;
@@ -211,25 +198,32 @@ async function handler(event) {
     const inputData = await cleanUp(body);
 
     try {
-        const client = new MongoClient("mongodb+srv://adminUserList:teDHVmh7myrNouHU@adminusers.k7gmi5z.mongodb.net/dpsGroup?retryWrites=true&w=majority&appName=adminUsers", { useNewUrlParser: true, useUnifiedTopology: true });
+        const client = new MongoClient(process.env.CONNECTIONSTRING, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
         await client.connect();
 
         const db = client.db("dpsGroup");
-        const result = await db.collection('users').insertOne(inputData);
+        const result = await db.collection("users").insertOne(inputData);
 
         client.close();
 
         return {
             statusCode: 200,
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ success: true, insertedId: result.insertedId, redirectTo: '/admin/admin-user' }),
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                success: true,
+                insertedId: result.insertedId,
+                redirectTo: "/admin/admin-users",
+            }),
         };
     } catch (error) {
-        console.error('Error inserting user data:', error);
+        console.error("Error inserting user data:", error);
         return {
             statusCode: 500,
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ success: false, error: 'Internal server error' }),
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ success: false, error: "Internal server error" }),
         };
     }
 }

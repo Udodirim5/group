@@ -8,9 +8,9 @@ async function addNewUsers() {
 
         userData.forEach((user) => {
             const clone = template.content.cloneNode(true);
-            clone.querySelector('#users-name').textContent = "Name: " + user.fullName;
+            clone.querySelector('#users-name').textContent = "Name: " + user.fullname;
             clone.querySelector('#users-email').textContent = "Email: " + user.email;
-            clone.querySelector('#users-phone').textContent = "Phone: " + user.phoneNumber;
+            clone.querySelector('#users-phone').textContent = "Phone: " + user.phone;
             clone.querySelector('#users-whatsapp').textContent = "Whatsapp: " + user.whatsapp;
 
             if (!user.photo) user.photo = "/img/fallback.jpg";
@@ -20,14 +20,14 @@ async function addNewUsers() {
             clone.querySelector('.img-view img').src = user.photo;
             clone.querySelector('.img-view img').alt = `profile photo of ${user.name}`;
 
-            clone.querySelector('#view-users-name').textContent = user.fullName;
+            clone.querySelector('#view-users-name').textContent = user.fullname;
             clone.querySelector('#view-users-email').textContent = user.email;
             clone.querySelector('#view-users-gender').textContent = user.gender;
             clone.querySelector('#view-users-uname').textContent = user.username;
             clone.querySelector('#view-users-country').textContent = user.country;
             clone.querySelector('#view-users-state').textContent = user.stateProvince;
             clone.querySelector('#view-users-city').textContent = user.city;
-            clone.querySelector('#view-users-phone').textContent = user.phoneNumber;
+            clone.querySelector('#view-users-phone').textContent = user.phone;
             clone.querySelector('#view-users-whatsapp').textContent = user.whatsapp;
 
             // Append the clone to the wrapper
